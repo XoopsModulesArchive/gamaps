@@ -1,0 +1,82 @@
+<{* $Id: gamaps_js.html,v 1.3 2008/02/14 16:16:20 ohwada Exp $ *}>
+
+<{* 2007-07-18 v2.x *}>
+<script src="http://maps.google.com/maps?file=api&amp;hl=<{$xoops_langcode}>&amp;v=2.x&amp;key=<{$ga_api_key}>" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+gamaps_xoops_url      = "<{$xoops_url}>";
+gamaps_xoops_langcode = "<{$xoops_langcode}>";
+gamaps_opener_mode    = "<{$ga_opener_mode}>";
+gamaps_lang_latitude  = "<{$lang_latitude}>";
+gamaps_lang_longitude = "<{$lang_longitude}>";
+gamaps_lang_zoom      = "<{$lang_zoom}>";
+gamaps_location_marker_html = "<{$ga_loc_marker_html}>";
+gamaps_lang_not_compatible  = "<{$lang_not_compatible}>";
+gamaps_lang_no_match_place  = "<{$lang_no_match_place}>";
+
+<{* value: numeric *}>
+<{if $ga_latitude != "" }>
+	gamaps_default_latitude = <{$ga_latitude}>;
+<{/if}>
+<{if $ga_longitude != "" }>
+	gamaps_default_longitude = <{$ga_longitude}>;
+<{/if}>
+<{if $ga_zoom != "" }>
+	gamaps_default_zoom = <{$ga_zoom}>;
+<{/if}>
+
+<{* value: strings *}>
+<{if $ga_map_type }>
+	gamaps_map_type = "<{$ga_map_type}>";
+<{/if}>
+<{if $ga_map_control }>
+	gamaps_map_control = "<{$ga_map_control}>";
+<{/if}>
+<{if $ga_geocode_kind }>
+	gamaps_geocode_kind = "<{$ga_geocode_kind}>";
+<{/if}>
+<{if $ga_geo_url }>
+	gamaps_geo_url = "<{$ga_geo_url}>";
+<{/if}>
+
+<{* 2008-02-12 change gamaps_use_type_control to gamaps_type_control *}>
+<{if $ga_type_control }>
+	gamaps_type_control = "<{$ga_type_control}>";
+<{/if}>
+
+<{* value: strings : "true" or "false" *}>
+<{if $ga_use_scale_control != "" }>
+	gamaps_use_scale_control = <{$ga_use_scale_control}>;
+<{/if}>
+
+<{* 2008-02-12 bug typo *}>
+<{if $ga_use_overview_map_control != "" }>
+	gamaps_use_overview_map_control = <{$ga_use_overview_map_control}>;
+<{/if}>
+
+<{if $ga_use_draggable_marker != "" }>
+	gamaps_use_draggable_marker = <{$ga_use_draggable_marker}>;
+<{/if}>
+<{if $ga_use_search_marker != "" }>
+	gamaps_use_search_marker = <{$ga_use_search_marker}>;
+<{/if}>
+<{if $ga_use_loc_marker != "" }>
+	gamaps_use_location_marker = <{$ga_use_loc_marker}>;
+<{/if}>
+<{if $ga_use_loc_marker_click != "" }>
+	gamaps_use_location_marker_click = <{$ga_use_loc_marker_click}>;
+<{/if}>
+<{if $ga_use_nishioka_inverse != "" }>
+	gamaps_use_nishioka_inverse = <{$ga_use_nishioka_inverse}>;
+<{/if}>
+<{if $ga_use_set_parent_location != "" }>
+	gamaps_use_set_parent_location =  <{$ga_use_set_parent_location}>;
+<{/if}>
+<{if $ga_use_set_parent_address != "" }>
+	gamaps_use_set_parent_address =  <{$ga_use_set_parent_address}>;
+<{/if}>
+
+//]]>
+</script>

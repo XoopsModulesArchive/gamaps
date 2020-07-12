@@ -1,0 +1,40 @@
+<{* $Id: gamaps_location.html,v 1.5 2008/02/24 03:36:29 ohwada Exp $ *}>
+
+<link href="<{$xoops_url}>/modules/gamaps/include/gamaps.css" type="text/css" rel="stylesheet"/>
+<script src="<{$xoops_url}>/modules/gamaps/include/gamaps.js" type="text/javascript"></script>
+<{include file="db:gamaps_js.html" }>
+
+<script type="text/javascript">
+//<![CDATA[
+	window.onload   = gamaps_load_location;
+	window.onunload = GUnload;
+//]]>
+</script>
+
+<h3 align='center'><{$module_name}></h3>
+<a href="index.php">[<{$lang_title_search}>]</a> 
+<a href="location.php">[<{$lang_title_location}>]</a> 
+<a href="georss.php">[<{$lang_title_georss}>]</a> 
+
+<h4><{$lang_title_location}></h4>
+<{$lang_title_location_desc}><br /><br />
+
+<noscript>
+  <div class="gamaps_error"><{$lang_js_invalid}></div>
+</noscript>
+
+<b><{$lang_current_location}></b><br />
+<{$lang_address}> : <{$ga_address}> <br />
+<{$lang_latitude}> : <{$ga_latitude}> / <{$lang_longitude}> : <{$ga_longitude}> / <{$lang_zoom}> : <{$ga_zoom}><br />
+<a href="<{$xoops_url}>/modules/gamaps/kml/kml.php">
+<img src="<{$xoops_url}>/modules/gamaps/images/google_earth.png" border="0" alt="GoogleEarth"> 
+<{$lang_download_kml}>
+</a><br />
+<br />
+
+<div id="gamaps_map" class="gamaps_map_location">Loading ...</div>
+
+<{if $is_module_admin }>
+	<br /><hr />
+	<a href="./admin/index.php">go to admin cp</a>
+<{/if}>

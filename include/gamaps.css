@@ -1,0 +1,42 @@
+/* $Id: gamaps.css,v 1.1 2007/07/11 08:56:14 ohwada Exp $ */
+
+.gamaps_map
+{
+	border:  1px solid #808080;	/* gray */
+	width:   98%;
+	height:  450px;
+	margin:  5px;
+	padding: 5px;
+}
+
+.gamaps_map_search
+{
+	border:  1px solid #808080;	/* gray */
+	width:   98%;
+	height:  450px;
+	margin:  5px;
+	padding: 5px;
+}
+
+.gamaps_map_location
+{
+	border:  1px solid #808080;	/* gray */
+	width:   98%;
+	height:  450px;
+	margin:  5px;
+	padding: 5px;
+}
+
+.gamaps_map_admin
+{
+	border:  1px solid #808080;	/* gray */
+	width:   98%;
+	height:  450px;
+	margin:  5px;
+	padding: 5px;
+}
+
+.gamaps_error
+{
+  color: #ff0000;
+}

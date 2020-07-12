@@ -1,0 +1,118 @@
+<{* $Id: gamaps_admin_location.html,v 1.1 2007/07/22 03:46:22 ohwada Exp $ *}>
+
+<link href="<{$xoops_url}>/modules/gamaps/include/gamaps.css" type="text/css" rel="stylesheet"/>
+<script src="<{$xoops_url}>/modules/gamaps/include/gamaps.js" type="text/javascript"></script>
+<{include file="db:gamaps_js.html" }>
+
+<script type="text/javascript">
+//<![CDATA[
+	window.onload   = gamaps_load_get_location;
+	window.onunload = GUnload;
+//]]>
+</script>
+
+<h3><{$module_name}></h3>
+<{$lang_module_desc}><br /><br />
+
+<ul>
+<li><a href="index.php"><{$lang_index}></a><br /><br /></li>
+<li><a href="<{$xoops_url}>/modules/system/admin.php?fct=preferences&amp;op=showmod&amp;mod=<{$mid}>"><{$lang_preferences}></a><br /><br /></li>
+<li><a href="<{$xoops_url}>/modules/gamaps/index.php"><{$lang_goto_module}></a></li>
+</ul><br />
+<hr />
+
+<h4><{$lang_title_get_location}></h4>
+
+<noscript>
+  <div class="gamaps_error"><{$lang_js_invalid}></div>
+</noscript>
+
+<form action="#" onsubmit="gamaps_searchAddress(this.gamaps_search.value); return false">
+<{$lang_address}> 
+<input type="text" id="gamaps_search" name="gamaps_search" value="<{$ga_address}>" size="60" />
+<input type="submit" value="<{$lang_search}>" />
+</form>
+<br />
+
+<b><{$lang_current_location}></b><br />
+<div id="gamaps_current_location"></div>
+<br />
+
+<{if $ga_use_nishioka_inverse == 'true' }>
+	<b><{$lang_current_address}></b><br />
+	<div id="gamaps_current_address"></div>
+	<br />
+<{/if}>
+
+<b><{$lang_search_list}></b><br />
+<div id="gamaps_list"></div>
+<br />
+
+<div id="gamaps_map" class="gamaps_map_admin">Loading ...</div>
+<br />
+
+<form action="#" method="post">
+<input type="hidden" name="op" value="edit" />
+<input type="hidden" name="XOOPS_G_TICKET" value="<{$ticket}>" />
+<table width='100%' class='outer' cellspacing='1'>
+<tr>
+	<th colspan='2'><{$lang_conf_location}></th>
+</tr>
+<tr>
+	<td class="head"><{$lang_latitude}></td>
+	<td class="even">
+		<{$ga_latitude}><br />
+		<input type="text" id="gamaps_latitude" name="gamaps_latitude" value="<{$ga_latitude}>" size="50" />
+	</td>
+</tr>
+<tr>
+	<td class="head"><{ $lang__LONGITUDE}></td>
+	<td class="even">
+		<{$ga_longitude}><br />
+		<input type="text" id="gamaps_longitude" name="gamaps_longitude" value="<{$ga_longitude}>" size="50" />
+	</td>
+</tr>
+<tr>
+	<td class="head"><{$lang_zoom}></td>
+	<td class="even">
+		<{$ga_zoom}><br />
+		<input type="text" id="gamaps_zoom" name="gamaps_zoom" value="<{$ga_zoom}>" size="50" />
+	</td>
+</tr>
+<tr>
+	<td class="head"></td>
+	<td class="even"><input type="submit" value="<{$lang_edit}>" /></td>
+</tr>
+</table>
+</form>
+<br />
+
+<form action="#" method="post">
+<input type="hidden" name="op" value="edit" />
+<input type="hidden" name="XOOPS_G_TICKET" value="<{$ticket}>" />
+<table width='100%' class='outer' cellspacing='1'>
+<tr>
+	<th colspan='2'><{$lang_conf_address}></th>
+</tr>
+<tr>
+	<td class="head"><{$lang_address}></td>
+	<td class="even">
+		<{$ga_address}><br />
+		<input type="text" id="gamaps_address" name="gamaps_address" value="<{$ga_address}>" size="50" />
+	</td>
+</tr>
+<tr>
+	<td class="head"></td>
+	<td class="even"><input type="submit" value="<{$lang_edit}>" /></td>
+</tr>
+</table>
+</form>
+<br />
+
+<hr />
+<div style="text-align: right; font-size: 80%;">
+<a href="http://linux2.ohwada.net/" target="_blank">
+Powered by Happy Linux
+</a><br />
+&copy; 2007, Kenichi OHWADA<br />
+</div>

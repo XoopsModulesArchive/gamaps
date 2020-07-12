@@ -1,0 +1,35 @@
+<{* $Id: gamaps_georss.html,v 1.2 2007/07/22 03:46:22 ohwada Exp $ *}>
+
+<link href="<{$xoops_url}>/modules/gamaps/include/gamaps.css" type="text/css" rel="stylesheet"/>
+<script src="<{$xoops_url}>/modules/gamaps/include/gamaps.js" type="text/javascript"></script>
+<{include file="db:gamaps_js.html" }>
+
+<script type="text/javascript">
+//<![CDATA[
+	window.onload   = gamaps_load_georss;
+	window.onunload = GUnload;
+//]]>
+</script>
+
+<h3 align='center'><{$module_name}></h3>
+<a href="index.php">[<{$lang_title_search}>]</a> 
+<a href="location.php">[<{$lang_title_location}>]</a> 
+<a href="georss.php">[<{$lang_title_georss}>]</a> 
+
+<h4><{$lang_title_georss}></h4>
+<{$lang_title_georss_desc}><br /><br />
+
+<noscript>
+  <div class="gamaps_error"><{$lang_js_invalid}></div>
+</noscript>
+
+<a href="<{$geo_url_s}>" target="_blank" ><img src="./images/rss.png" alt="<{$geo_title_s}>"></a> 
+<b><{$geo_title_s}></b> <br /><br />
+
+<div id="gamaps_map" class="gamaps_map">Loading ...</div>
+<br />
+
+<{if $is_module_admin }>
+	<br /><hr />
+	<a href="./admin/index.php">go to admin cp</a>
+<{/if}>

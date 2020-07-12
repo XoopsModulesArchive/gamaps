@@ -1,0 +1,2 @@
+# $Id: .htaccess,v 1.1 2008/02/24 03:26:54 ohwada Exp $
+AddType application/vnd.google-earth.kml+xml .kml
